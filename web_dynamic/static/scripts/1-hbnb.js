@@ -10,7 +10,13 @@ $(document).ready(function() {
       delete chosenAmenities[amentiyID];
     }
 
-    let amenitiesList = Object.values(chosenAmenities).join(', ')
-    $('div.amenities h4').text(amenitiesList);
+    localStorage.setItem("chosenAmenities", JSON.stringify(chosenAmenities));
+    updatedAmenitiesList();
   });
-});
+
+    function updatedAmenitiesList() {
+    const amenitiesList = Object.values(chosenAmenities).join(', ');
+    $('div.amenities h4').text(amenitiesList);
+    }
+    updatedAmenitiesList();
+  });
