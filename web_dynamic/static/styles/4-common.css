@@ -9,3 +9,15 @@ body .container {
     max-width: 1000px;
     margin: 30px auto;
 }
+
+.amenities h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+  width: 250px;
+  height: 1.1em;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

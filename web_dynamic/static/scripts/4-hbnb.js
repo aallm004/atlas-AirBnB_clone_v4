@@ -1,4 +1,4 @@
-let chosenAmenities = {};
+let checkedAmenities = {};
 
 $(document).ready(function() {
   
@@ -7,17 +7,17 @@ $(document).ready(function() {
     const amenityName = $(this).data("name");
 
     if ($(this).is(':checked')) {
-      chosenAmenities[$(this).data("id")] = amenityName;
+      checkedAmenities[$(this).data("id")] = amenityName;
     } else {
-      delete chosenAmenities[$(this).data("id")];
+      delete checkedAmenities[$(this).data("id")];
     }
     updatedAmenitiesList();
   });
 });  
 
 function updatedAmenitiesList() {
-  const amenitiesList = Object.values(chosenAmenities).join(', ');
-  $('div.amenities h4').text(amenitiesList);
+  const amenitiesList = Object.values(checkedAmenities).join(', ');
+  $('#checkedAmenities').text(amenitiesList);
 }
 
 function checkAPIStatus() {
